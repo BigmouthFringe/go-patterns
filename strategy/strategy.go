@@ -9,7 +9,6 @@ func TriggerDucks() {
 	weirdDuck.PerformFly()
 	weirdDuck.PerformQuack()
 }
-
 func TriggerNpcByName(name string) {
 	switch name {
 	case "Mark":
@@ -18,6 +17,7 @@ func TriggerNpcByName(name string) {
 	case "Tom":
 		var friendlyNpc = Npc{}.New("Tom", Talk{})
 		friendlyNpc.Trigger()
+	// That is Tanner from High School. Don't mess with him!
 	case "Tanner":
 		var notGivingAFuckNpc = Npc{}.New("Tanner", Walk{})
 		notGivingAFuckNpc.Trigger()

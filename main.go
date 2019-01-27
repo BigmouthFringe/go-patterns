@@ -1,8 +1,9 @@
 package main
 
-import "github.com/bigmouthfringe/go-patterns/strategy"
+import (
+	"github.com/bigmouthfringe/go-patterns/observer"
+)
 
 func main() {
-	strategy.TriggerDucks()
-	strategy.TriggerNpcByName("Tanner")
+	observer.UpdateWeatherData()
 }
