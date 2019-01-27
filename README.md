@@ -4,5 +4,6 @@ Hope it will help someone to understand patterns better with that intuitive exam
 Feel free to contribute if there's something wrong in those implementations. Thanks!
 
 **List of implemented Patterns:**
+- **Behavioral**
 - [x] Strategy 
 - [x] Observer

@@ -19,14 +19,14 @@ func (Quack) Quack() {
 	fmt.Println("Quack!")
 }
 func (Squeak) Quack() {
-	fmt.Println("Squeak! *weird noises following...*")
+	fmt.Println("Squeak!")
 }
 
 func (FlyWithWings) Fly() {
-	fmt.Println("*flying away towards sunset...*")
+	fmt.Println("*Flying away towards sunset...*")
 }
 func (FlyNoWay) Fly() {
-	fmt.Println("*tries to fly without success...*")
+	fmt.Println("*It just can't fly, I'm sorry*")
 }
 
 type Duck struct {

@@ -1,5 +1,8 @@
 package observer
 
+// Observer Pattern defines one-to-many dependency between objects
+// (to be specific - between Subject or Observable and Observers)
+// so that when one object changes state, all its dependents are notified and updated automatically
 type Observer interface {
 	Update(temp, humidity, pressure float32)
 }
@@ -67,4 +70,17 @@ func (slice Observers) indexOf(observer Observer) int {
 }
 func (slice Observers) remove(pos int) Observers {
 	return append(slice[:pos], slice[pos+1:]...)
+}
+
+// The result that we have is that after we change our WeatherData state
+// it automatically notifies all our displays and they handle it (e.g. print out the messages)
+func UpdateWeatherData() {
+	var weatherData = WeatherData{}.New()
+	CurrentConditionDisplay{}.New(weatherData)
+	ForecastDisplay{}.New(weatherData)
+
+	// Simulation of new weather measurements
+	weatherData.SetMeasurements(80, 65, 30.4)
+	weatherData.SetMeasurements(82, 70, 29.2)
+	weatherData.SetMeasurements(78, 90, 29.2)
 }
