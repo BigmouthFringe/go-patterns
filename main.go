@@ -1,9 +1,7 @@
 package main
 
-import (
-	"github.com/bigmouthfringe/go-patterns/observer"
-)
+import "github.com/bigmouthfringe/go-patterns/decorator"
 
 func main() {
-	observer.UpdateWeatherData()
+	decorator.ServeCoffee()
 }
