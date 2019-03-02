@@ -7,8 +7,11 @@ Feel free to contribute if there's something wrong in those implementations. Tha
 **List of implemented Patterns:**
 
 **Behavioral:**
-- [x] Strategy 
-- [x] Observer
+- ✔ Strategy 
+- ✔ Observer
 
 **Structural:**
-- [x] Decorator
+- ✔ Decorator
+
+**Creational:**
+- ✔ Factory

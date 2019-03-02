@@ -12,3 +12,16 @@ type Observable interface {
 	RemoveObserver(observer Observer)
 	NotifyObservers()
 }
+
+type Observers []Observer
+func (slice Observers) indexOf(observer Observer) int {
+	for pos, o := range slice {
+		if o == observer {
+			return pos
+		}
+	}
+	return -1
+}
+func (slice Observers) remove(pos int) Observers {
+	return append(slice[:pos], slice[pos+1:]...)
+}

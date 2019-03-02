@@ -1,7 +1,12 @@
 package main
 
-import "github.com/bigmouthfringe/go-patterns/decorator"
+import (
+	"fmt"
+	"github.com/bigmouthfringe/go-patterns/factory"
+)
 
 func main() {
-	decorator.ServeCoffee()
+	pizzaSort := factory.Clam
+	pizza := factory.CreatePizza(pizzaSort)
+	fmt.Printf("%T, %#v", pizza, *pizza)
 }

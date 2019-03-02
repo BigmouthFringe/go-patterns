@@ -10,8 +10,7 @@ type WeatherData struct {
 }
 
 func (WeatherData) New() *WeatherData {
-	var ws = new(WeatherData)
-	return ws
+	return new(WeatherData)
 }
 
 func (ws *WeatherData) RegisterObserver(observer Observer) {
@@ -33,9 +32,9 @@ func (ws *WeatherData) SetMeasurements(temp, humid, pres float32) {
 	ws.temperature = temp
 	ws.humidity = humid
 	ws.pressure = pres
-	ws.MeasurementsChanged()
+	ws.measurementsChanged()
 }
-func (ws *WeatherData) MeasurementsChanged() {
+func (ws *WeatherData) measurementsChanged() {
 	ws.NotifyObservers()
 }
 
@@ -47,19 +46,6 @@ func (ws *WeatherData) GetHumidity() float32 {
 }
 func (ws *WeatherData) GetPressure() float32 {
 	return ws.pressure
-}
-
-type Observers []Observer
-func (slice Observers) indexOf(observer Observer) int {
-	for pos, o := range slice {
-		if o == observer {
-			return pos
-		}
-	}
-	return -1
-}
-func (slice Observers) remove(pos int) Observers {
-	return append(slice[:pos], slice[pos+1:]...)
 }
 
 // The result that we have is that after we change our WeatherData state

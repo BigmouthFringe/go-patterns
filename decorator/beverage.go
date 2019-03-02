@@ -74,12 +74,16 @@ func (w *Whip) Cost() float64 {
 
 func ServeCoffee() {
 	var espresso = Espresso{}.New()
-	fmt.Println(espresso.Description(), "$", espresso.Cost())
+
+	var espressoCostStr = fmt.Sprintf("%.2f", espresso.Cost())
+	fmt.Println(espresso.Description(), "$" + espressoCostStr)
 
 	var houseBlend Beverage
 	houseBlend = HouseBlend{}.New()
 	houseBlend = Mocha{}.New(houseBlend)
 	houseBlend = Mocha{}.New(houseBlend)
 	houseBlend = Whip{}.New(houseBlend)
-	fmt.Println(houseBlend.Description(), "$", houseBlend.Cost())
+
+	var blendCostStr = fmt.Sprintf("%.2f", houseBlend.Cost())
+	fmt.Println(houseBlend.Description(), "$" + blendCostStr)
 }
